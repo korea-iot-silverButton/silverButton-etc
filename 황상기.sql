@@ -4,8 +4,8 @@ use silver_button;
 SET foreign_key_checks= 1;
  -- 게시글 조건별 조회
 select * from board order by id desc ;      -- 게시글 전체 조회     
-select * from board where user_id order by id desc;   -- 게시글 작성자별 조회 id값별로 내림차순
-select * from board where title order by id desc;  --  게시글 제목별 조회 id값 별로 내림차순
+select * from board where user_id = ?order by id desc;   -- 게시글 작성자별 조회 id값별로 내림차순
+select * from board where title like '%title%' order by id desc;  --  게시글 제목별 조회 id값 별로 내림차순
 
 -- 게시글 생성 
 insert into board(user_id, title, content) values (1,'실버버튼프로젝트','실버니아');
