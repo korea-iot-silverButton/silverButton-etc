@@ -71,7 +71,7 @@ WHERE id = 5;  -- 삭제할 쪽지 ID
 DELETE FROM matchings
 WHERE dependent_id = 1 AND caregiver_id = 2;
 
-SELECT -- 특정 요양사 정보 조회*******************이름변경
+SELECT -- 특정 요양사 정보 조회
   id AS 요양사,
   name AS 이름,
   phone AS 전화번호,
