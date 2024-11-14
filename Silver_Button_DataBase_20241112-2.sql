@@ -78,10 +78,11 @@ CREATE TABLE comment (
 );
 
 CREATE TABLE board_like (
-  PRIMARY KEY (board_id),
-  board_id BIGINT,
-  liker_id VARCHAR(50),
-  FOREIGN KEY (board_id) REFERENCES board(id) ON DELETE CASCADE
+  id  bigint primary key auto_increment,   -- 좋아요 id  (관리번호)
+  board_id BIGINT,   -- 좋아요 눌린 게시글
+  liker_id bigint,    -- 좋아요 누른 사람
+  FOREIGN KEY (board_id) REFERENCES board(id) ON DELETE CASCADE ON update cascade,
+  foreign key(liker_id) references users(id) ON UPDATE CASCADE
 );
 
 CREATE TABLE message (
